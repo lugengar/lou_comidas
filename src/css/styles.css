@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'gagalin';
+    src: url('src/fonts/fuente.otf') format('opentype');
+}
+*{
+    font-family: 'gagalin';
+    color: white;
+}
+body{
+    background-color: black;
+    overflow: hidden;
+ 
+}
+.contenedor{
+    overflow: auto;
+    gap: 5vh;
+    grid-area: CON;
+    display: grid;
+    grid-template: 
+    "MENU MENU MENU"max-content
+    ". CON2 ." max-content/
+    auto 50vh auto;
+} 
+.titulo{
+    grid-area: MENU;
+    font-size: 8vh;
+    text-align: center;
+}
+.header{
+    padding: 1vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    grid-area: HEA;
+    display: grid;
+    grid-template: 
+    "LOG . CON"auto/
+    8vh auto 6vh;
+}
+.logo{
+    background-size: 8vh;
+    background-position: center;
+    background-image: url(../SVG/logo.svg);
+    background-repeat: no-repeat;
+    grid-area: LOG;
+}
+.contacto{
+    grid-area: CON;
+    background-size: 5vh;
+    background-position: center;
+    background-image: url(../SVG/contacto.svg);
+    background-repeat: no-repeat;
+}
+.contenido{
+    gap: 2vh;
+    position: relative;
+    grid-area: CON2;
+    font-size: 4vh;
+    overflow-y:auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.comida{
+    width: 100%;
+    gap: 2vh;
+    display: grid;
+    grid-template: 
+    "BAR BAR BAR"3.5vh
+    ". OP ." max-content/
+    auto 45vh auto;
+}
+.barra{
+    border-bottom: white 0.3vh solid;
+    grid-area: BAR;
+    display: grid;
+    grid-template: 
+    "NOM . PRE"auto/
+    auto auto auto;
+}
+.nombre{
+    font-size: 3vh;
+    grid-area: NOM;
+
+}
+.precio{
+    text-align: end;
+    font-size: 3vh;
+    grid-area: PRE;
+}
+.opciones{
+    grid-area: OP;
+    
+}
+.opcion{
+    font-size: 3vh;
+
+}
+.fondo{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    z-index: -2;
+}
+.capa{
+    display: grid;
+    grid-template: 
+    "HEA HEA HEA"10vh
+    "CON CON CON"auto/
+    auto auto auto;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+}

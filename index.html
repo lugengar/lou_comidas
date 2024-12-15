@@ -1,1 +1,83 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <div class="capa">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="contacto"></div>
+        </div>
+        <div class="contenedor">
+            <div class="titulo">MENú</div>
+            <div class="contenido" id="contenido">
+               
+            </div>
+        </div>
+    </div>
+    <div class="fondo" style="z-index: -1; background-color: rgba(0, 0, 0, 0.8);"></div>
+    <div class="fondo" style="filter: blur(0.5vh); background-image: url(src/jpg/fondo.jpg);"></div>
+</body>
+</html>
+<script>
+ const comidas = [
+    {
+        nombre: "Empanada",
+        precio: "$5000",
+        opciones: ["Carne", "Pollo", "Verdura"]
+    },
+    {
+        nombre: "Pizza",
+        precio: "$15000",
+        opciones: ["Margarita", "Pepperoni", "Cuatro Quesos"]
+    }
+];
+
+function renderComidas(comidas) {
+    const container = document.getElementById('contenido'); 
+
+    comidas.forEach(comida => {
+        const comidaDiv = document.createElement('div');
+        comidaDiv.classList.add('comida');
+
+        const barraDiv = document.createElement('div');
+        barraDiv.classList.add('barra');
+
+        const nombreDiv = document.createElement('div');
+        nombreDiv.classList.add('nombre');
+        nombreDiv.textContent = comida.nombre;
+
+        const precioDiv = document.createElement('div');
+        precioDiv.classList.add('precio');
+        precioDiv.textContent = comida.precio;
+
+        barraDiv.appendChild(nombreDiv);
+        barraDiv.appendChild(precioDiv);
+
+        const opcionesDiv = document.createElement('div');
+        opcionesDiv.classList.add('opciones');
+
+        comida.opciones.forEach(opcion => {
+            const opcionLi = document.createElement('li');
+            opcionLi.classList.add('opcion');
+            opcionLi.textContent = opcion;
+            opcionesDiv.appendChild(opcionLi);
+        });
+
+        comidaDiv.appendChild(barraDiv);
+        comidaDiv.appendChild(opcionesDiv);
+
+        container.appendChild(comidaDiv);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderComidas(comidas);
+});
+
+</script>
