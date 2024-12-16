@@ -20,7 +20,7 @@ body{
 .contenedor{
     overflow-x: hidden;
     overflow-y: auto;
-    gap: 5vh;
+    
     grid-area: CON;
     display: grid;
     grid-template: 
@@ -30,6 +30,7 @@ body{
 } 
 .titulo{
     grid-area: MENU;
+    padding-bottom: 5vh;
     font-size: 8vh;
     text-align: center;
 }
@@ -44,13 +45,17 @@ body{
     8vh auto 6vh;
 }
 .logo{
-    background-size: 8vh;
+    animation: logo 4s infinite both;
+
+    background-size: 7vh;
     background-position: center;
     background-image: url(../SVG/logo.svg);
     background-repeat: no-repeat;
     grid-area: LOG;
 }
 .contacto{
+    animation: logo 4s infinite both;
+
     grid-area: CON;
     background-size: 5vh;
     background-position: center;
@@ -111,6 +116,30 @@ body{
         padding-right: 0vh;
     }
 }
+@keyframes logo {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes fondo {
+    0%{
+        background-position-y: 0%;
+    }
+   
+    50%{
+        background-position-y: 100%;
+
+    }
+    100%{
+        background-position-y: 0%;
+    }
+}
 .opciones{
     grid-area: OP;
     
@@ -120,8 +149,10 @@ body{
 
 }
 .fondo{
+    animation: fondo 60s infinite both;
+
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     height: 100%;
     width: 100%;
     position: fixed;
