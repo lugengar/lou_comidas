@@ -1,10 +1,16 @@
 @font-face {
-    font-family: 'gagalin';
-    src: url('src/fonts/fuente.otf') format('opentype');
+    font-family: 'Gagalin';
+    src: url('../src/fonts/Gagalin-Regular.woff2') format('woff2'),
+        url('../src/fonts/Gagalin-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
+
 *{
     font-family: 'gagalin';
     color: white;
+    letter-spacing: 0.2vh;
 }
 body{
     background-color: black;
