@@ -34,6 +34,24 @@ body{
     font-size: 8vh;
     text-align: center;
 }
+.titulo span {
+    display: inline-block; 
+    animation: letras infinite 2s both;
+}
+
+.titulo span:nth-child(1) {
+    
+    animation-delay: 0s;
+}
+.titulo span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.titulo span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.titulo span:nth-child(4) {
+    animation-delay: 0.8s;
+}
 .header{
     padding: 1vh;
     padding-left: 2vh;
@@ -41,8 +59,8 @@ body{
     grid-area: HEA;
     display: grid;
     grid-template: 
-    "LOG . CON"auto/
-    8vh auto 6vh;
+    "LOG . CON IG"auto/
+    8vh auto 6vh 6vh;
 }
 .logo{
 
@@ -60,6 +78,15 @@ body{
     background-size: 5vh;
     background-position: center;
     background-image: url(../SVG/contacto.svg);
+    background-repeat: no-repeat;
+}
+.instagram{
+
+
+    grid-area: IG;
+    background-size: 5vh;
+    background-position: center;
+    background-image: url(../SVG/instagram.svg);
     background-repeat: no-repeat;
 }
 .contenido{
@@ -129,7 +156,7 @@ body{
 
 }
 .fondo{
-    animation: fondo 60s infinite both;
+    /* animation: fondo 60s infinite both; */
 
     background-size: cover;
     background-repeat: repeat-y;
@@ -151,4 +178,15 @@ body{
     position: absolute;
     left: 0%;
     top: 0%;
+}
+@keyframes letras {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(20%);
+    }
+    100%{
+        transform: translateY(0);
+    }
 }

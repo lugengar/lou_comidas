@@ -43,11 +43,13 @@
         },
         {
             "nombre": "Hamburguesa veggie con guarnición",
+            "imagen": "jpg/tarta.jpg",
             "precio": "$5000",
             "opciones": []
         },
         {
             "nombre": "Tarta individual",
+            "imagen": "jpg/tarta.jpg",
             "precio": "$3000",
             "opciones": ["Jamón y queso", "Pollo y queso", "Verdura y queso", "Calabaza y queso"]
         },
