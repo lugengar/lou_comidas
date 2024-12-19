@@ -25,19 +25,22 @@
 </body>
 </html>
 <script>
- const comidas = [
-    {
-        nombre: "Empanadaaaaaaaaaaaaaaaaaaaa",
-        precio: "$5000",
-        opciones: ["Carne", "Pollo", "Verdura"]
-    },
-    {
-        nombre: "Pizza",
-        precio: "$15000",
-        opciones: ["Margarita", "Pepperoni", "Cuatro Quesos"]
-    }
-];
-
+window.navigator.globalPrivacyControl = true;
+function obtenermenu(){
+    fetch('./src/menu.json')
+    .then(response => {
+        if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        renderComidas(data)
+    })
+    .catch(error => {
+        console.error('Hubo un problema al leer el archivo JSON:', error);
+    });
+}
 function renderComidas(comidas) {
     const container = document.getElementById('contenido'); 
 
@@ -77,7 +80,7 @@ function renderComidas(comidas) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    renderComidas(comidas);
+    obtenermenu();
 });
 
 </script>

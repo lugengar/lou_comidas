@@ -1,0 +1,24 @@
+
+
+    [
+        {
+            "nombre": "Pizza casera grande",
+            "precio": "$5500",
+            "opciones": ["Con queso"]
+        },
+        {
+            "nombre": "Empanada",
+            "precio": "$1400",
+            "opciones": ["Carne", "jamón y queso", "choclo"]
+        },
+        {
+            "nombre": "Milanesa con guarnición",
+            "precio": "$5000",
+            "opciones": ["Carne", "Pollo", "Soja"]
+        },
+        {
+            "nombre": "Milanesa a la napolitana",
+            "precio": "$6000",
+            "opciones": ["Carne", "Pollo", "Soja"]
+        }
+    ]
