@@ -45,7 +45,7 @@ body{
     8vh auto 6vh;
 }
 .logo{
-    animation: logo 4s infinite both;
+
 
     background-size: 7vh;
     background-position: center;
@@ -54,7 +54,7 @@ body{
     grid-area: LOG;
 }
 .contacto{
-    animation: logo 4s infinite both;
+
 
     grid-area: CON;
     background-size: 5vh;
@@ -63,7 +63,8 @@ body{
     background-repeat: no-repeat;
 }
 .contenido{
-    gap: 2vh;
+    padding-bottom: 10vh;
+    gap: 10vh;
     position: relative;
     grid-area: CON2;
     font-size: 4vh;
@@ -99,34 +100,13 @@ body{
 
 }
 .precio{
-   
-    animation: letra 2s infinite both;
+  
     text-align: end;
     font-size: 3vh;
     grid-area: PRE;
 }
-@keyframes letra {
-    0%{
-        padding-right: 0vh;
-    }
-    50%{
-        padding-right: 1vh;
-    }
-    100%{
-        padding-right: 0vh;
-    }
-}
-@keyframes logo {
-    0%{
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(1.1);
-    }
-    100%{
-        transform: scale(1);
-    }
-}
+
+
 @keyframes fondo {
     0%{
         background-position-y: 0%;

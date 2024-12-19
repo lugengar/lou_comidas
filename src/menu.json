@@ -2,9 +2,19 @@
 
     [
         {
-            "nombre": "Pizza casera grande",
+            "nombre": "Pizza margarita grande",
             "precio": "$5500",
-            "opciones": ["Con queso"]
+            "opciones": []
+        },
+        {
+            "nombre": "Pizza mixta grande",
+            "precio": "$6500",
+            "opciones": ["huevo", "cebolla"]
+        },
+        {
+            "nombre": "Pizza margarita individual",
+            "precio": "$4000",
+            "opciones": []
         },
         {
             "nombre": "Empanada",
@@ -20,5 +30,35 @@
             "nombre": "Milanesa a la napolitana",
             "precio": "$6000",
             "opciones": ["Carne", "Pollo", "Soja"]
+        },
+        {
+            "nombre": "Sandwich de milanesa",
+            "precio": "$5000",
+            "opciones": ["con lechuga y tomate"]
+        },
+        {
+            "nombre": "Hamburguesa gigante con guarnición",
+            "precio": "$5000",
+            "opciones": []
+        },
+        {
+            "nombre": "Hamburguesa veggie con guarnición",
+            "precio": "$5000",
+            "opciones": []
+        },
+        {
+            "nombre": "Tarta individual",
+            "precio": "$3000",
+            "opciones": ["Jamón y queso", "Pollo y queso", "Verdura y queso", "Calabaza y queso"]
+        },
+        {
+            "nombre": "Tortilla de papa individual",
+            "precio": "$4000",
+            "opciones": ["Jamón y queso", "Pollo y queso", "Verdura y queso", "Calabaza y queso"]
+        },
+        {
+            "nombre": "Ensalada",
+            "precio": "$4500",
+            "opciones": ["mixta", "completa"]
         }
     ]
