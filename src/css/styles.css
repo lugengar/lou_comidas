@@ -38,7 +38,21 @@ body{
     display: inline-block; 
     animation: letras infinite 2s both;
 }
-
+.textura{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    opacity: 50%;
+    pointer-events: none;
+    z-index: 2500;
+    background-image: url(../SVG/textura.svg);
+   
+}
 .titulo span:nth-child(1) {
     
     animation-delay: 0s;
