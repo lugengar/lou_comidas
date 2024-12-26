@@ -14,12 +14,12 @@
 }
 body{
     background-color: black;
-    overflow: hidden;
- 
+    overflow: auto; 
+    height: max-content;
 }
 .contenedor{
-    overflow-x: hidden;
-    overflow-y: auto;
+    /* overflow-x: hidden; */
+    /* overflow-y: auto; */
     
     grid-area: CON;
     display: grid;
@@ -68,10 +68,14 @@ body{
     animation-delay: 0.8s;
 }
 .header{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    z-index: 10;
+    top: 0;
     padding: 1vh;
     padding-left: 2vh;
     padding-right: 2vh;
     grid-area: HEA;
+    position: sticky;
     display: grid;
     grid-template: 
     "LOG . CON IG"auto/
@@ -103,6 +107,12 @@ body{
     background-position: center;
     background-image: url(../SVG/instagram.svg);
     background-repeat: no-repeat;
+}
+.instagram:hover{
+    transform: scale(1.1);
+}
+.contacto:hover{
+    transform: scale(1.1);
 }
 .contenido{
     padding-bottom: 10vh;
@@ -186,9 +196,9 @@ body{
     display: grid;
     grid-template: 
     "HEA HEA HEA"10vh
-    "CON CON CON"auto/
+    "CON CON CON"max-content/
     auto auto auto;
-    height: 100%;
+    height: max-content;
     width: 100%;
     position: absolute;
     left: 0%;
