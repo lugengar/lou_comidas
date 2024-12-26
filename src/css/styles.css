@@ -47,7 +47,8 @@ body{
     height: 100%;
     left: 0%;
     top: 0%;
-    opacity: 50%;
+    opacity: 30%;
+    /* filter: blur(1px); */
     pointer-events: none;
     z-index: 2500;
     background-image: url(../SVG/textura.svg);
@@ -171,7 +172,7 @@ body{
 }
 .fondo{
     /* animation: fondo 60s infinite both; */
-
+    background-position: center;
     background-size: cover;
     background-repeat: repeat-y;
     height: 100%;
