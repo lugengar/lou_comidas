@@ -130,6 +130,10 @@
       "imagen": "./src/jpg/milanesa.jpeg"
     },
     {
+      "nombre": "Ensalada",
+      "imagen": "./src/jpg/ensalada.jpeg"
+    },
+    {
       "nombre": "Tarta",
       "imagen": "./src/jpg/tarta.jpg"
     },
