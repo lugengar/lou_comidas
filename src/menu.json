@@ -109,13 +109,13 @@
     },
     {
       "nombre": "Plato De Pasta",
-      "precio": "$5000",
+      "precio": "$6000",
       "opciones": ["Espaguetis", "Tirabuzón", "Tallarín", "Mostachol"],
       "titulo": "Pastas"
     },
     {
       "nombre": "Salsas",
-      "precio": "$1000",
+      "precio": "",
       "opciones": ["Fileto", "Boloñesa", "Con Crema"]
     }
   ],
