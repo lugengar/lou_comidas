@@ -284,7 +284,7 @@ footer{
 }
 .capa2{
     animation: desaparecer 0.5s both ;
-    animation-delay: 2s;
+    animation-delay: 1s;
     z-index: 1000;
     display: grid;
     gap: 1vh;
