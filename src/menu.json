@@ -119,26 +119,7 @@
         "opciones": ["Fileto", "Boloñesa", "Con crema"]
       }
     ],
-    "categorias": [
-      {
-        "nombre": "Pizzas",
-        "imagen": "./src/jpg/pizza.jpeg"
-      },
-      {
-        "nombre": "Milanesas",
-        "imagen": "./src/jpg/milanesa.jpeg"
-      },
-      {
-        "nombre": "Tartas",
-        "imagen": "./src/jpg/tarta.jpg"
-      },
-      {
-        "nombre": "Pastas",
-        "imagen": "./src/jpg/pasta.jpeg"
-      }
-    ],
-  
-  
+
     "categorias": [
       {
         "nombre": "pizza",
