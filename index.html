@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="textura"></div>
-    <div class="capa2">
+    <div class="capa2" id="capa2">
         <div class="fondo" style="filter: blur(0.2vh); background-image: url(./src/jpg/pasta.jpeg);"></div> 
         <div class="fondo" style="z-index: -1; background-color: rgba(0, 0, 0, 0.8);"></div>
 
@@ -135,6 +135,12 @@ function renderComidas(comidas) {
 
 document.addEventListener('DOMContentLoaded', () => {
     obtenermenu();
+    setTimeout(() => {
+      const etiqueta = document.getElementById('capa2');
+      if (etiqueta) {
+        etiqueta.style.display = 'none';
+      }
+    }, 2000);
 });
 
 </script>

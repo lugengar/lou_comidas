@@ -46,7 +46,7 @@
     {
       "nombre": "Guarnición",
       "precio": "$1500",
-      "opciones": ["Papas Fritas", "Ensalada De Lechuga y Tomate", "Ensalada De Zanahoria y Tomate", "Ensalada De Tomate y Huevo", "Purée De Papas", "Purée De Calabaza", "Papa y Huevo"]
+      "opciones": ["Papas Fritas", "Ensalada De Lechuga y Tomate", "Ensalada De Zanahoria y Tomate", "Ensalada De Tomate y Huevo", "Puré De Papas", "Puré De Calabaza", "Papa y Huevo"]
     },
     {
       "nombre": "Ensalada Mixta",
