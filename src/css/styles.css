@@ -34,7 +34,16 @@ body{
     font-size: 8vh;
     text-align: center;
 }
+.titulo2{
+    font-size: 8vh;
+    text-align: center;
+}
+.titulo2 span {
+    display: inline-block; 
+    animation: letras infinite 2s both;
+}
 .titulo span {
+    
     display: inline-block; 
     animation: letras infinite 2s both;
 }
@@ -67,6 +76,19 @@ body{
 .titulo span:nth-child(4) {
     animation-delay: 0.8s;
 }
+.titulo2 span:nth-child(4n+1) {
+    animation-delay: 0s;
+}
+.titulo2 span:nth-child(4n+2) {
+    animation-delay: 0.2s;
+}
+.titulo2 span:nth-child(4n+3) {
+    animation-delay: 0.4s;
+}
+.titulo2 span:nth-child(4n+4) {
+    animation-delay: 0.8s;
+}
+
 .header{
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
     z-index: 10;
@@ -90,6 +112,7 @@ body{
     background-repeat: no-repeat;
     grid-area: LOG;
 }
+
 .contacto{
 
 
@@ -114,9 +137,16 @@ body{
 .contacto:hover{
     transform: scale(1.1);
 }
+footer{
+    width: 100%;
+    text-align: center;
+    padding-top: 10vh;
+    font-size: 3vh;
+    
+   
+}
 .contenido{
-    padding-bottom: 10vh;
-    gap: 10vh;
+    gap: 7vh;
     position: relative;
     grid-area: CON2;
     font-size: 4vh;
@@ -125,6 +155,7 @@ body{
     flex-wrap: wrap;
 }
 .comida{
+    z-index: 10;
     width: 100%;
     gap: 2vh;
     display: grid;
@@ -135,6 +166,8 @@ body{
     align-items: center;
 }
 .barra{
+    z-index: 10;
+
     border-bottom: white 0.3vh dashed;
     grid-area: BAR;
     display: grid;
@@ -142,19 +175,22 @@ body{
     "NOM . PRE"auto/
     auto auto auto;
 }
+
 .nombre{
+    z-index: 10;
    
     overflow: hidden;
     white-space: nowrap;       
     text-overflow: ellipsis; 
-    font-size: 3vh;
+    font-size: 4vh;
     grid-area: NOM;
 
 }
 .precio{
+    z-index: 10;
   
     text-align: end;
-    font-size: 3vh;
+    font-size: 4vh;
     grid-area: PRE;
 }
 
@@ -192,6 +228,33 @@ body{
     top: 0%;
     z-index: -2;
 }
+.fondo2{
+    background-position: center;
+    background-size: 2vh;
+    background-repeat: repeat-y;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: -2;
+    display: grid;
+}
+.categoria{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 10vh;
+    gap: 10vh;
+    position: relative;
+    font-size: 4vh;
+    overflow-y:auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20%;
+    padding-right: 20%;
+
+}
 .capa{
     display: grid;
     grid-template: 
@@ -209,7 +272,7 @@ body{
         transform: translateY(0);
     }
     50%{
-        transform: translateY(20%);
+        transform: translateY(5%);
     }
     100%{
         transform: translateY(0);

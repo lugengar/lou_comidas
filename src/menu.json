@@ -1,66 +1,161 @@
-
-
-    [
-        {
-            "nombre": "Pizza margarita grande",
-            "precio": "$5500",
-            "opciones": []
-        },
-        {
-            "nombre": "Pizza mixta grande",
-            "precio": "$6500",
-            "opciones": ["huevo", "cebolla"]
-        },
-        {
-            "nombre": "Pizza margarita individual",
-            "precio": "$4000",
-            "opciones": []
-        },
-        {
-            "nombre": "Empanada",
-            "precio": "$1400",
-            "opciones": ["Carne", "jamón y queso", "choclo"]
-        },
-        {
-            "nombre": "Milanesa con guarnición",
-            "precio": "$5000",
-            "opciones": ["Carne", "Pollo", "Soja"]
-        },
-        {
-            "nombre": "Milanesa a la napolitana",
-            "precio": "$6000",
-            "opciones": ["Carne", "Pollo", "Soja"]
-        },
-        {
-            "nombre": "Sandwich de milanesa",
-            "precio": "$5000",
-            "opciones": ["con lechuga y tomate"]
-        },
-        {
-            "nombre": "Hamburguesa gigante con guarnición",
-            "precio": "$5000",
-            "opciones": []
-        },
-        {
-            "nombre": "Hamburguesa veggie con guarnición",
-            "imagen": "jpg/tarta.jpg",
-            "precio": "$5000",
-            "opciones": []
-        },
-        {
-            "nombre": "Tarta individual",
-            "imagen": "jpg/tarta.jpg",
-            "precio": "$3000",
-            "opciones": ["Jamón y queso", "Pollo y queso", "Verdura y queso", "Calabaza y queso"]
-        },
-        {
-            "nombre": "Tortilla de papa individual",
-            "precio": "$4000",
-            "opciones": ["Jamón y queso", "Pollo y queso", "Verdura y queso", "Calabaza y queso"]
-        },
-        {
-            "nombre": "Ensalada",
-            "precio": "$4500",
-            "opciones": ["mixta", "completa"]
-        }
+{
+    "menu": [
+      {
+        "nombre": "Pizza grande casera",
+        "precio": "$7000",
+        "opciones": [],
+        "titulo": "Pizzas"
+      },
+      {
+        "nombre": "Pizza chica casera",
+        "precio": "$5000",
+        "opciones": []
+      },
+      {
+        "nombre": "Adicionales",
+        "precio": "$1500",
+        "opciones": ["cebolla", "tomate", "jamón", "huevo"]
+      },
+      {
+        "nombre": "Empanada",
+        "precio": "$1600",
+        "opciones": ["Carne", "Jamón y Queso", "Choclo"],
+        "titulo": "Empanadas"
+      },
+      {
+        "nombre": "Milanesa",
+        "precio": "$5000",
+        "opciones": ["Carne", "Pollo", "Soja"],
+        "titulo": "Milanesas"
+      },
+      {
+        "nombre": "Milanesa a la napolitana",
+        "precio": "$6000",
+        "opciones": ["Carne", "Pollo", "Soja"]
+      },
+      {
+        "nombre": "Sándwich de milanesa",
+        "precio": "$5000",
+        "opciones": ["Carne", "Pollo", "Soja"]
+      },
+      {
+        "nombre": "Adicionales",
+        "precio": "$1000",
+        "opciones": ["Lechuga y Tomate"]
+      },
+      {
+        "nombre": "Guarnición",
+        "precio": "$1500",
+        "opciones": ["Papas fritas", "Ensalada de lechuga y tomate", "Ensalada de zanahoria y tomate", "Ensalada de tomate y huevo", "Purée de papas", "Purée de calabaza", "Papa y huevo"]
+      },
+      {
+        "nombre": "Ensalada mixta",
+        "precio": "$4500",
+        "opciones": ["con lechuga y tomate"],
+        "titulo": "Ensaladas"
+      },
+      {
+        "nombre": "Ensalada completa",
+        "precio": "$4500",
+        "opciones": ["lechuga, tomate, cebolla y zanahoria"]
+      },
+      {
+        "nombre": "Ensalada papa y huevo",
+        "precio": "$4500",
+        "opciones": ["papa y huevo"]
+      },
+      {
+        "nombre": "Porción de papas fritas",
+        "precio": "$4500",
+        "opciones": [],
+        "titulo": "Papas"
+      },
+      {
+        "nombre": "Tortilla individual",
+        "precio": "$5000",
+        "opciones": ["huevo, papa y cebolla"]
+      },
+      {
+        "nombre": "Tarta individual",
+        "precio": "$4500",
+        "opciones": ["Verdura y queso", "Jamón y queso", "Zucchini", "Calabaza"],
+        "titulo": "Tartas"
+      },
+      {
+        "nombre": "Tarta individual de pollo",
+        "precio": "$5000",
+        "opciones": ["pollo"]
+      },
+      {
+        "nombre": "Hamburguesa gigante",
+        "precio": "$6000",
+        "opciones": [],
+        "titulo": "Hamburguesas"
+      },
+      {
+        "nombre": "Hamburguesa veggie",
+        "precio": "$5000",
+        "opciones": []
+      },
+      {
+        "nombre": "Adicionales",
+        "precio": "$1000",
+        "opciones": ["queso", "lechuga", "tomate"]
+      },
+      {
+        "nombre": "Guarnición",
+        "precio": "$1500",
+        "opciones": ["Papas fritas"]
+      },
+      {
+        "nombre": "Plato de pasta",
+        "precio": "$5000",
+        "opciones": ["Espaguetis", "Tirabuzón", "Tallarín", "Mostachol"],
+        "titulo": "Pastas"
+      },
+      {
+        "nombre": "Salsas",
+        "precio": "$1000",
+        "opciones": ["Fileto", "Boloñesa", "Con crema"]
+      }
+    ],
+    "categorias": [
+      {
+        "nombre": "Pizzas",
+        "imagen": "./src/jpg/pizza.jpeg"
+      },
+      {
+        "nombre": "Milanesas",
+        "imagen": "./src/jpg/milanesa.jpeg"
+      },
+      {
+        "nombre": "Tartas",
+        "imagen": "./src/jpg/tarta.jpg"
+      },
+      {
+        "nombre": "Pastas",
+        "imagen": "./src/jpg/pasta.jpeg"
+      }
+    ],
+  
+  
+    "categorias": [
+      {
+        "nombre": "pizza",
+        "imagen": "./src/jpg/pizza.jpeg"
+      },
+      {
+        "nombre": "milanesa",
+        "imagen": "./src/jpg/milanesa.jpeg"
+      },
+      {
+        "nombre": "tarta",
+        "imagen": "./src/jpg/tarta.jpg"
+      },
+      {
+        "nombre": "pasta",
+        "imagen": "./src/jpg/pasta.jpeg"
+      }
     ]
+  }
+  

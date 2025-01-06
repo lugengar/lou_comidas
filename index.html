@@ -16,18 +16,43 @@
             <a class="instagram" href="https://www.instagram.com/lou_comidas/"></a>
         </div>
         <div class="contenedor">
+            <div class="fondo2 " id="fondoo" style="filter: blur(0.5vh);"></div> 
+        
             <div class="titulo"><span>M</span><span>E</span><span>N</span><span>Ú</span></div>
             <div class="contenido" id="contenido">
-               
-            </div>
+               <div style="width: 100%; font-size: 3vh;">Bienvenid@ a Lou comidas
+                <br>Nos esforzamos para ofrecerte platos deliciosos a buen precio, con ingredientes frescos y un sabor único. Contamos con delivery y aceptamos efectivo o transferencia. ¡Disfruta de nuestra comida!</div>
+                <div style="width: 100%; font-size: 3vh;">Horarios de atención:
+                    <li>Lunes a Viernes: 9:00 AM / 13:00 PM</li>
+                    <li>Sábados y Domingos: Cerrado</li>
+                    
+                    </div>
         </div>
     </div>
     <div class="fondo" style="z-index: -1; background-color: rgba(0, 0, 0, 0.8);"></div>
-    <div class="fondo" style="filter: blur(0.5vh); background-image: url(src/jpg/fondo.jpg);"></div>
+    
 </body>
 </html>
 <script>
 window.navigator.globalPrivacyControl = true;
+function crearTitulo(palabra) {
+  const contenedor = document.createElement("div");
+  contenedor.className = "titulo2";
+
+  for (const letra of palabra) {
+    
+    const span = document.createElement("span");
+
+    if(letra==" "){
+        span.style.padding ="1vh"
+    }
+    span.textContent = letra;
+    contenedor.style.paddingTop="10vh"
+    contenedor.appendChild(span);
+  }
+
+  return contenedor;
+}
 function obtenermenu(){
     fetch('./src/menu.json')
     .then(response => {
@@ -45,9 +70,27 @@ function obtenermenu(){
 }
 function renderComidas(comidas) {
     const container = document.getElementById('contenido'); 
+    fondo = document.getElementById('fondoo'); 
+   
+    estilos =""
+    comidas.categorias.forEach(categoria => {
+        estilos = estilos+'"'+categoria.nombre+' '+categoria.nombre+'"'+'1fr'
+        const catego = document.createElement('div');
+        catego.classList.add('categoria');
+        catego.id= categoria.nombre;
+        catego.style.gridArea = categoria.nombre;
+        catego.style.backgroundImage = 'url('+categoria.imagen+')';
+        fondo.appendChild(catego);
+    });
+    estilos = estilos+"/auto auto"
 
-    comidas.forEach(comida => {
+    fondo.style.gridTemplate = estilos
+   comidas.menu.forEach(comida => {
         const comidaDiv = document.createElement('div');
+        
+        if (typeof comida.titulo !== "undefined") {
+            container.appendChild(crearTitulo(comida.titulo))
+        }
         comidaDiv.classList.add('comida');
 
         const barraDiv = document.createElement('div');
@@ -79,6 +122,8 @@ function renderComidas(comidas) {
 
         container.appendChild(comidaDiv);
     });
+    container.innerHTML = container.innerHTML + ' <footer class="footer"><p>© 2025 Lou comidas. Todos los derechos reservados.</p></footer>';
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {
