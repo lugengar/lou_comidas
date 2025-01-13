@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="src/css/styles.css">
 </head>
 <body>
-    <div class="textura"></div>
+   <!----> <div class="textura"></div>
     <div class="capa2" id="capa2">
         <div class="fondo" style="filter: blur(0.2vh); background-image: url(./src/jpg/pasta.jpeg);"></div> 
         <div class="fondo" style="z-index: -1; background-color: rgba(0, 0, 0, 0.8);"></div>
@@ -61,7 +61,7 @@ function crearTitulo(palabra) {
   return contenedor;
 }
 function obtenermenu(){
-    fetch('./src/menu.json')
+    fetch('./backend/menu.json')
     .then(response => {
         if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión del Menú</title>
+</head>
+<body>
+  <h1>Gestión del Menú</h1>
+
+  <!-- Formulario para agregar comida -->
+  <h2>Agregar Comida</h2>
+  <form id="addForm">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="precio">Precio:</label>
+    <input type="text" id="precio" name="precio" required><br><br>
+
+    <label for="opciones">Opciones (separadas por coma):</label>
+    <input type="text" id="opciones" name="opciones"><br><br>
+
+    <label for="titulo">Título (opcional):</label>
+    <input type="text" id="titulo" name="titulo"><br><br>
+
+    <button type="submit">Agregar Comida</button>
+  </form>
+
+  <hr>
+
+  <!-- Formulario para eliminar comida -->
+  <h2>Eliminar Comida</h2>
+  <form id="deleteForm">
+    <label for="nombreEliminar">Nombre de la Comida:</label>
+    <input type="text" id="nombreEliminar" name="nombreEliminar" required><br><br>
+
+    <button type="submit">Eliminar Comida</button>
+  </form>
+
+  <script>
+    const apiUrl = "./src/api.php"; // Cambia esto por la URL de tu API
+
+    // Manejar el envío del formulario de agregar comida
+    document.getElementById("addForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      const precio = document.getElementById("precio").value;
+      const opciones = document.getElementById("opciones").value.split(",").map(opt => opt.trim());
+      const titulo = document.getElementById("titulo").value;
+
+      const newItem = { nombre, precio, opciones, ...(titulo && { titulo }) };
+
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "add", item: newItem }),
+      });
+
+      const result = await response.json();
+      alert(result.message || "Error al agregar la comida");
+    });
+
+    // Manejar el envío del formulario de eliminar comida
+    document.getElementById("deleteForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById("nombreEliminar").value;
+
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "delete", nombre }),
+      });
+
+      const result = await response.json();
+      alert(result.message || "Error al eliminar la comida");
+    });
+  </script>
+</body>
+</html>
