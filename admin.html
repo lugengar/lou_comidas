@@ -12,7 +12,7 @@
   <div id="loginForm">
     <h2>Iniciar sesión</h2>
     <label for="password">Contraseña:</label>
-    <input type="password" id="password" name="password" required><br><br>
+    <input type="text" id="password" name="password" required><br><br>
     <button id="loginButton">Iniciar sesión</button>
     <p id="errorMessage" style="color: red; display: none;">Contraseña incorrecta. Intenta de nuevo.</p>
   </div>
@@ -51,7 +51,7 @@
 
   <script>
     const apiUrl = "https://backend-lou-comidas.onrender.com/menu"; // Cambia esto por la URL de tu API
-    const loginApiUrl = "https://backend-lou-comidas.onrender.com/contraseña"; // URL de tu API para verificar la contraseña
+    const loginApiUrl = "https://backend-lou-comidas.onrender.com/contrasena"; // URL de tu API para verificar la contraseña
 
     // Manejar el envío del formulario de agregar comida
     document.getElementById("addForm").addEventListener("submit", async (e) => {
