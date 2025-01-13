@@ -38,7 +38,7 @@
   </form>
   <div id="contenido"></div>
   <script>
-    const apiUrl = "http://localhost:3000/menu"; // Cambia esto por la URL de tu API
+    const apiUrl = "https://backend-lou-comidas.onrender.com/menu"; // Cambia esto por la URL de tu API
 
     // Manejar el envío del formulario de agregar comida
     document.getElementById("addForm").addEventListener("submit", async (e) => {
@@ -102,7 +102,7 @@
       return contenedor;
     }
     function obtenermenu(){
-        fetch('http://localhost:3000/menu')
+        fetch('https://backend-lou-comidas.onrender.com/menu')
         .then(response => {
             if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
