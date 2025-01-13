@@ -61,7 +61,7 @@ function crearTitulo(palabra) {
   return contenedor;
 }
 function obtenermenu(){
-    fetch('./backend/menu.json')
+    fetch('http://localhost:3000/menu')
     .then(response => {
         if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
