@@ -1,0 +1,112 @@
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2 {
+      color: #fff;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+
+    /* Estilo para los formularios */
+    #loginForm, #menuForm {
+      width: 80%;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #222;
+      border-radius: 8px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #444;
+      background-color: #333;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #444;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #666;
+    }
+
+    #errorMessage {
+      color: red;
+      text-align: center;
+      display: none;
+    }
+
+    /* Estilo para el contenido de las comidas */
+    .comida {
+      background-color: #333;
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .barra {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .nombre, .precio {
+      font-size: 18px;
+    }
+
+    .opciones {
+      margin-top: 10px;
+    }
+
+    .opcion {
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: #fff;
+      font-size: 12px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .titulo2 span {
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+
+    .titulo2 {
+      text-align: center;
+      margin-top: 40px;
+    }
