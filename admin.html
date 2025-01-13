@@ -36,9 +36,9 @@
 
     <button type="submit">Eliminar Comida</button>
   </form>
-
+  <div id="contenido"></div>
   <script>
-    const apiUrl = "./src/api.php"; // Cambia esto por la URL de tu API
+    const apiUrl = "./backend/api.php"; // Cambia esto por la URL de tu API
 
     // Manejar el envío del formulario de agregar comida
     document.getElementById("addForm").addEventListener("submit", async (e) => {
@@ -58,6 +58,8 @@
 
       const result = await response.json();
       alert(result.message || "Error al agregar la comida");
+      location.reload();
+
     });
 
     // Manejar el envío del formulario de eliminar comida
@@ -73,7 +75,102 @@
 
       const result = await response.json();
       alert(result.message || "Error al eliminar la comida");
+      location.reload();
+
     });
+
+    
   </script>
+  <script>
+    window.navigator.globalPrivacyControl = true;
+    function crearTitulo(palabra) {
+      const contenedor = document.createElement("div");
+      contenedor.className = "titulo2";
+    
+      for (const letra of palabra) {
+        
+        const span = document.createElement("span");
+    
+        if(letra==" "){
+            span.style.padding ="1vh"
+        }
+        span.textContent = letra;
+        contenedor.style.paddingTop="10vh"
+        contenedor.appendChild(span);
+      }
+    
+      return contenedor;
+    }
+    function obtenermenu(){
+        fetch('./backend/menu.json')
+        .then(response => {
+            if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            renderComidas(data)
+        })
+        .catch(error => {
+            console.error('Hubo un problema al leer el archivo JSON:', error);
+        });
+    }
+    function renderComidas(comidas) {
+        const container = document.getElementById('contenido'); 
+       
+    
+       comidas.menu.forEach(comida => {
+            const comidaDiv = document.createElement('div');
+            
+            if (typeof comida.titulo !== "undefined") {
+                container.appendChild(crearTitulo(comida.titulo))
+            }
+            comidaDiv.classList.add('comida');
+    
+            const barraDiv = document.createElement('div');
+            barraDiv.classList.add('barra');
+    
+            const nombreDiv = document.createElement('div');
+            nombreDiv.classList.add('nombre');
+            nombreDiv.textContent = comida.nombre;
+    
+            const precioDiv = document.createElement('div');
+            precioDiv.classList.add('precio');
+            precioDiv.textContent = comida.precio;
+    
+            barraDiv.appendChild(nombreDiv);
+            barraDiv.appendChild(precioDiv);
+    
+            const opcionesDiv = document.createElement('div');
+            opcionesDiv.classList.add('opciones');
+    
+            comida.opciones.forEach(opcion => {
+                const opcionLi = document.createElement('li');
+                opcionLi.classList.add('opcion');
+                opcionLi.textContent = opcion;
+                opcionesDiv.appendChild(opcionLi);
+            });
+    
+            comidaDiv.appendChild(barraDiv);
+            comidaDiv.appendChild(opcionesDiv);
+    
+            container.appendChild(comidaDiv);
+        });
+        container.innerHTML = container.innerHTML + ' <footer class="footer"><p>© 2025 Lou comidas. Todos los derechos reservados.</p></footer>';
+    
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        obtenermenu();
+        setTimeout(() => {
+          const etiqueta = document.getElementById('capa2');
+          if (etiqueta) {
+            etiqueta.style.display = 'none';
+          }
+        }, 2000);
+    });
+    
+    </script>
 </body>
 </html>

@@ -61,7 +61,11 @@ function crearTitulo(palabra) {
   return contenedor;
 }
 function obtenermenu(){
-    fetch('./backend/menu.json')
+    const apiUrl = 'http://pruebabase.infinityfreeapp.com/menu.json';
+const proxyUrl = 'https://cors-proxy.htmldriven.com/?url=';
+
+fetch(proxyUrl + encodeURIComponent(apiUrl))
+    
     .then(response => {
         if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
