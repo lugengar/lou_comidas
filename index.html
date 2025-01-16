@@ -62,7 +62,7 @@ function crearTitulo(palabra) {
 }
 function obtenermenu(){
     //'https://backend-lou-comidas.onrender.com/menu'
-    fetch('./src/menu.json')
+    fetch('https://backend-lou-comidas.onrender.com/menu')
     .then(response => {
         if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
