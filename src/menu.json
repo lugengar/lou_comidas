@@ -87,6 +87,11 @@
       "opciones": ["Pollo"]
     },
     {
+      "nombre": "Tarta Individual De Pollo con puerro",
+      "precio": "$5500",
+      "opciones": ["Pollo y Puerro"]
+    },
+    {
       "nombre": "Hamburguesa Gigante",
       "precio": "$6000",
       "opciones": [],
