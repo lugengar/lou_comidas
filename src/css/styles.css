@@ -12,6 +12,9 @@
     color: white;
     letter-spacing: 0.2vh;
 }
+.marcadeagua{
+    padding: 2vh;
+}
 body{
     background-color: black;
     overflow: auto; 
