@@ -35,13 +35,13 @@
     },
     {
       "nombre": "Sándwich De Milanesa",
-      "precio": "$5000",
+      "precio": "$6500",
       "opciones": ["Carne", "Pollo", "Soja"]
     },
     {
-      "nombre": "Adicionales",
-      "precio": "$1000",
-      "opciones": ["Lechuga y Tomate"]
+      "nombre": "Adicionales Sandwich",
+      "precio": "",
+      "opciones": ["Lechuga","Tomate","Mayonesa","Huevo frito"]
     },
     {
       "nombre": "Guarnición",
