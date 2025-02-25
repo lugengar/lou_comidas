@@ -20,7 +20,7 @@
       "nombre": "Empanada",
       "precio": "$1600",
       "opciones": ["Carne", "Jamón y Queso", "Choclo"],
-      "titulo": "Empanadas"
+      "titulo": "Empanada"
     },
     {
       "nombre": "Milanesa",
