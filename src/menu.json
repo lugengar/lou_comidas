@@ -86,7 +86,6 @@
       "opciones": ["Verdura y Queso", "Jamón y Queso", "Zucchini", "Calabaza"],
       "titulo": "Tartas"
     },
-  
     {
       "nombre": "Tarta Individual De Pollo con verdeo",
       "precio": "$6000",
@@ -119,7 +118,7 @@
       "opciones": ["Espaguetis", "Tirabuzón", "Tallarín", "Mostachol"],
       "titulo": "Pastas"
     },
-        {
+    {
       "nombre": "Canelones",
       "precio": "$6500",
       "opciones": ["Verdura y Ricota"]
