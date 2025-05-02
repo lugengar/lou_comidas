@@ -86,11 +86,7 @@
       "opciones": ["Verdura y Queso", "Jamón y Queso", "Zucchini", "Calabaza"],
       "titulo": "Tartas"
     },
-    {
-      "nombre": "Tarta Individual De Pollo",
-      "precio": "$5500",
-      "opciones": ["Pollo"]
-    },
+  
     {
       "nombre": "Tarta Individual De Pollo con verdeo",
       "precio": "$6000",
