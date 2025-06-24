@@ -1,15 +1,10 @@
 {
   "menu": [
     {
-      "nombre": "MILANESA CON PURÉ",
-      "precio": "$4500",
-      "opciones": ["Carne", "Pollo", "Soja"],
-      "titulo": "PROMOS"
-    },
-    {
       "nombre": "2 PIZZETAS Y 1 EMPANADA",
       "precio": "$4500",
-      "opciones": ["Carne", "Jamón y Queso", "Choclo"]
+      "opciones": ["Carne", "Jamón y Queso", "Choclo"],
+      "titulo": "PROMOS"
     },
     {
       "nombre": "TARTA A ELECCIÓN",
