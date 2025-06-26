@@ -1,15 +1,10 @@
 {
   "menu": [
     {
-      "nombre": "2 PIZZETAS Y 1 EMPANADA",
+      "nombre": "BONDIOLA Y PAPAS AL HORNO",
       "precio": "$4500",
-      "opciones": ["Carne", "Jamón y Queso", "Choclo"],
+      "opciones": [],
       "titulo": "PROMOS"
-    },
-    {
-      "nombre": "TARTA A ELECCIÓN",
-      "precio": "$4500",
-      "opciones": []
     },
     {
       "nombre": "Pizza Grande Casera",
