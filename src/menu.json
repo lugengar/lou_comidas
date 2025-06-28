@@ -1,11 +1,5 @@
 {
-  "menu": [
-    {
-      "nombre": "BONDIOLA Y PAPAS AL HORNO",
-      "precio": "$4500",
-      "opciones": [],
-      "titulo": "PROMOS"
-    },
+
     {
       "nombre": "Pizza Grande Casera",
       "precio": "$9000",
