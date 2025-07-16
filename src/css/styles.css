@@ -275,6 +275,8 @@ footer{
     left: 0%;
     top: 0%;
     z-index: -2;
+    display: grid;
+    grid-template-rows: repeat(auto) 1fr;
 }
 .fondo2{
     background-position: center;
