@@ -82,3 +82,30 @@
     margin-top: 30px;
   }
 
+  @media (max-width: 600px) {
+    body {
+      margin: 20px;
+      font-size: 16px;
+    }
+  
+    .item {
+      padding: 15px;
+    }
+  
+    input[type="text"],
+    textarea,
+    select {
+      font-size: 16px;
+      padding: 10px;
+    }
+  
+    label {
+      font-size: 15px;
+    }
+  
+    button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  

@@ -63,7 +63,7 @@
       jsonActual.imagenes.forEach((item, i) => {
         contenedor.innerHTML += `
           <div class="item">
-            <label>Marca:</label>
+            <label>Tipo de comida:</label>
             <select onchange="editar(${i}, 'marca', this.value)">
             ${jsonmarcas.map(marcaData => `
                 <option value="${marcaData.nombre}" ${marcaData.nombre === item.marca ? 'selected' : ''}>
