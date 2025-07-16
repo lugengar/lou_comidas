@@ -63,8 +63,12 @@ function crearTitulo(palabra) {
   return contenedor;
 }
 function obtenermenu(){
+    const apiKey = "$2a$10$eOsaPW2ljAl3E823gVdkwepHIBVMslBpa4rQE.OVT4R/ZoXUesnKC";
+    const bindkey = "6877ff51c7f29633ab29e6a0";
     //'https://backend-lou-comidas.onrender.com/menu'
-    fetch('./src/menu.json')
+    fetch(`https://api.jsonbin.io/v3/b/${bindkey}`, {
+      headers: { "X-Access-Key": apiKey }
+    })
     .then(response => {
         if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -78,63 +82,86 @@ function obtenermenu(){
         console.error('Hubo un problema al leer el archivo JSON:', error);
     });
 }
-function renderComidas(comidas) {
-    const container = document.getElementById('contenido'); 
-    fondo = document.getElementById('fondoo'); 
-   
-    estilos =""
-    comidas.categorias.forEach(categoria => {
-        estilos = estilos+'"'+categoria.nombre+' '+categoria.nombre+'"'+'1fr'
-        const catego = document.createElement('div');
-        catego.classList.add('categoria');
-        catego.id= categoria.nombre;
-        catego.style.gridArea = categoria.nombre;
-        catego.style.backgroundImage = 'url('+categoria.imagen+')';
-        fondo.appendChild(catego);
-    });
-    estilos = estilos+"/auto auto"
+function renderComidas(data) {
+  const container = document.getElementById('contenido'); 
+  const fondo = document.getElementById('fondoo'); 
 
-    fondo.style.gridTemplate = estilos
-   comidas.menu.forEach(comida => {
-        const comidaDiv = document.createElement('div');
-        
-        if (typeof comida.titulo !== "undefined") {
-            container.appendChild(crearTitulo(comida.titulo))
-        }
-        comidaDiv.classList.add('comida');
+  container.innerHTML = "";
+  fondo.innerHTML = "";
 
-        const barraDiv = document.createElement('div');
-        barraDiv.classList.add('barra');
+  let estilos = "";
+  const categoriasUnicas = [...new Set(data.imagenes.map(p => p.marca))];
 
-        const nombreDiv = document.createElement('div');
-        nombreDiv.classList.add('nombre');
-        nombreDiv.textContent = comida.nombre;
+  categoriasUnicas.forEach(marca => {
+    estilos += `"${marca} ${marca}" 1fr `;
 
-        const precioDiv = document.createElement('div');
-        precioDiv.classList.add('precio');
-        precioDiv.textContent = comida.precio;
+    const categoriaDiv = document.createElement('div');
+    categoriaDiv.classList.add('categoria');
+    categoriaDiv.id = marca;
+    categoriaDiv.style.gridArea = marca;
 
-        barraDiv.appendChild(nombreDiv);
-        barraDiv.appendChild(precioDiv);
+    // Intentamos encontrar una imagen asociada a la marca
+    const imagenCategoria = data.imagenes.find(p => p.marca === marca)?.imagen || "sinfoto.svg";
+    categoriaDiv.style.backgroundImage = `url(${data.configuracion.ubicacioncarpeta + imagenCategoria})`;
 
-        const opcionesDiv = document.createElement('div');
-        opcionesDiv.classList.add('opciones');
+    fondo.appendChild(categoriaDiv);
+  });
 
-        comida.opciones.forEach(opcion => {
-            const opcionLi = document.createElement('li');
-            opcionLi.classList.add('opcion');
-            opcionLi.textContent = opcion;
-            opcionesDiv.appendChild(opcionLi);
-        });
+  fondo.style.gridTemplate = estilos + "/auto auto";
 
-        comidaDiv.appendChild(barraDiv);
-        comidaDiv.appendChild(opcionesDiv);
+  data.imagenes.forEach(producto => {
+    const comidaDiv = document.createElement('div');
+    comidaDiv.classList.add('comida');
+    comidaDiv.style.gridArea = producto.marca;
 
-        container.appendChild(comidaDiv);
-    });
-    container.innerHTML = container.innerHTML + ' <footer class="marcadeagua">© 2025 LOU COMIDAS. DESARROLLADO POR &nbsp;<a href="https://barbiniwebdesign.com.ar/">LUCIANO BARBINI</a></footer>';
+    const barraDiv = document.createElement('div');
+    barraDiv.classList.add('barra');
 
+    const nombreDiv = document.createElement('div');
+    nombreDiv.classList.add('nombre');
+    nombreDiv.textContent = producto.titulo;
+
+    const precioDiv = document.createElement('div');
+    precioDiv.classList.add('precio');
+    precioDiv.textContent = "$" + producto.precio;
+
+    barraDiv.appendChild(nombreDiv);
+    barraDiv.appendChild(precioDiv);
+
+    const opcionesDiv = document.createElement('ul');
+    opcionesDiv.classList.add('opciones');
+
+    if (producto.opciones) {
+      producto.opciones.forEach(opcion => {
+        const opcionLi = document.createElement('li');
+        opcionLi.classList.add('opcion');
+        opcionLi.textContent = opcion;
+        opcionesDiv.appendChild(opcionLi);
+      });
+    }
+
+    if (producto.adicionales) {
+      producto.adicionales.forEach(adic => {
+        const adicLi = document.createElement('li');
+        adicLi.classList.add('opcion');
+        adicLi.textContent = adic + " (adicional)";
+        opcionesDiv.appendChild(adicLi);
+      });
+    }
+
+    comidaDiv.appendChild(barraDiv);
+    comidaDiv.appendChild(opcionesDiv);
+    container.appendChild(comidaDiv);
+  });
+
+  container.innerHTML += `
+    <footer class="marcadeagua">
+      © 2025 LOU COMIDAS. DESARROLLADO POR &nbsp;
+      <a href="https://barbiniwebdesign.com.ar/">LUCIANO BARBINI</a>
+    </footer>
+  `;
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
    obtenermenu();
