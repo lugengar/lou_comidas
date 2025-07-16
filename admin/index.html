@@ -85,8 +85,7 @@
             <label>Opciones (separados por coma):</label>
             <input type="text" value="${(item.opciones || []).join(', ')}" onchange="editarLista(${i}, 'opciones', this.value)">
             
-            
-            <label>¿Solo uno? (true/false):</label>
+            <label>¿Solo se puede agregar un adicional? (ej: salsa):</label>
           <input type="checkbox" ${item.solouno ? 'checked' : ''} onchange="editarValorBooleano(${i}, 'solouno', this.checked)">
           <button onclick="eliminarProducto(${i})">🗑 Eliminar</button>
 
