@@ -44,7 +44,7 @@
   fetch(`https://api.jsonbin.io/v3/b/${bindkey}`, {
       headers: { "X-Access-Key": apiKey }
     }).then(res => res.json()),
-  fetch('src/JSON/marcas.json').then(res => res.json())
+  fetch('marcas.json').then(res => res.json())
 ])
 .then(([productos, marcas]) => {
 
