@@ -37,6 +37,18 @@ body{
     font-size: 8vh;
     text-align: center;
 }
+.titulo3 {
+    grid-area: MENU;
+    padding-bottom: 5vh;
+    font-size: 8vh;
+    text-align: center;
+}
+.titulo3 span{
+    display: inline-block; 
+    animation: letras infinite 2s both;
+    text-decoration: underline;
+
+}
 .titulo2{
     font-size: 8vh;
     text-align: center;
@@ -83,6 +95,21 @@ body{
 .titulo span:nth-child(4) {
     animation-delay: 0.8s;
 }
+
+.titulo3 span:nth-child(1) {
+    
+    animation-delay: 0s;
+}
+.titulo3 span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.titulo3 span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.titulo3 span:nth-child(4) {
+    animation-delay: 0.8s;
+} 
+
 .titulo2 span:nth-child(4n+1) {
     animation-delay: 0s;
 }
