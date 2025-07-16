@@ -38,7 +38,12 @@
                 
         </div>
     </div>
-    <div class="fondo" style="z-index: -1; background-color: rgba(0, 0, 0, 0.8);"></div>
+    <div class="fondo" style="z-index: -1; background-color: rgba(0, 0, 0, 0.8);">
+      <div class="categoria" style="background-image: url(src/jpg/tarta.jpg);"></div>
+      <div class="categoria" style="background-image: url(src/jpg/pizza.jpeg);"></div>
+      <div class="categoria" style="background-image: url(src/jpg/milanesa.jpeg);"></div>
+      <div class="categoria" style="background-image: url(src/jpg/pasta.jpeg);"></div>
+    </div>
     
 </body>
 </html>
@@ -84,15 +89,15 @@ function obtenermenu(){
 }
 function renderComidas(data) {
   const container = document.getElementById('contenido'); 
-  const fondo = document.getElementById('fondoo'); 
+  //const fondo = document.getElementById('fondoo'); 
 
   container.innerHTML = "";
-  fondo.innerHTML = "";
+ // fondo.innerHTML = "";
 
   let estilos = "";
   const categoriasUnicas = [...new Set(data.imagenes.map(p => p.marca))];
 
-  categoriasUnicas.forEach(marca => {
+  /*categoriasUnicas.forEach(marca => {
     estilos += `"${marca} ${marca}" 1fr `;
 
     const categoriaDiv = document.createElement('div');
@@ -105,9 +110,9 @@ function renderComidas(data) {
     categoriaDiv.style.backgroundImage = `url(${data.configuracion.ubicacioncarpeta + imagenCategoria})`;
 
     fondo.appendChild(categoriaDiv);
-  });
+  });*/
 
-  fondo.style.gridTemplate = estilos + "/auto auto";
+  //fondo.style.gridTemplate = estilos + "/auto auto";
 
   data.imagenes.forEach(producto => {
     const comidaDiv = document.createElement('div');
