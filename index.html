@@ -76,7 +76,7 @@ function obtenermenu(){
         return response.json();
     })
     .then(data => {
-        renderComidas(data)
+        renderComidas(data.record)
     })
     .catch(error => {
         console.error('Hubo un problema al leer el archivo JSON:', error);
