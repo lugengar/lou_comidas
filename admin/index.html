@@ -26,6 +26,9 @@
   <label>Adicionales (coma separados):</label>
   <input type="text" id="nuevos-adicionales">
 
+  <label>Precio de los adicionales:</label>
+  <input type="text" id="nuevo-precioadicionales">
+
   <label>Opciones (coma separados):</label>
   <input type="text" id="nuevas-opciones">
 
@@ -81,7 +84,10 @@
             
             <label>Adicionales (separados por coma):</label>
             <input type="text" value="${(item.adicionales || []).join(', ')}" onchange="editarLista(${i}, 'adicionales', this.value)">
-            
+
+             <label>Precio de los adicionales:</label>
+            <input type="text" value="${item.precioadicionales || ''}" onchange="editar(${i}, 'precio', this.value)">
+
             <label>Opciones (separados por coma):</label>
             <input type="text" value="${(item.opciones || []).join(', ')}" onchange="editarLista(${i}, 'opciones', this.value)">
             
@@ -101,6 +107,7 @@
     imagen: "sinfoto.svg",
     posicionimagen: "center",
     adicionales: document.getElementById("nuevos-adicionales").value.split(',').map(v => v.trim()).filter(Boolean),
+    precioadicionales: document.getElementById("nuevos-precioadicionales").value.split(',').map(v => v.trim()).filter(Boolean),
     opciones: document.getElementById("nuevas-opciones").value.split(',').map(v => v.trim()).filter(Boolean),
     solouno: document.getElementById("nuevo-solouno").checked
   };
