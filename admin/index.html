@@ -34,7 +34,7 @@
 
   <label>¿Se puede agregar un solo adicional?</label>
   <input type="checkbox" id="nuevo-solouno">
-
+<br>
   <button onclick="agregarNuevo()">➕ Agregar al menú</button>
 </div>
   <div id="productos"></div>
@@ -86,13 +86,16 @@
             <input type="text" value="${(item.adicionales || []).join(', ')}" onchange="editarLista(${i}, 'adicionales', this.value)">
 
              <label>Precio de los adicionales:</label>
-            <input type="text" value="${item.precioadicionales || ''}" onchange="editar(${i}, 'precio', this.value)">
+            <input type="text" value="${item.precioadicionales || ''}" onchange="editar(${i}, 'precioadicionales', this.value)">
 
             <label>Opciones (separados por coma):</label>
             <input type="text" value="${(item.opciones || []).join(', ')}" onchange="editarLista(${i}, 'opciones', this.value)">
             
             <label>¿Se puede agregar un solo adicional?:</label>
           <input type="checkbox" ${item.solouno ? 'checked' : ''} onchange="editarValorBooleano(${i}, 'solouno', this.checked)">
+<br>
+<br>
+
           <button onclick="eliminarProducto(${i})">🗑 Eliminar</button>
 
           </div>
