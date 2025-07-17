@@ -1,7 +1,7 @@
 body {
   font-family: "Segoe UI", sans-serif;
-  margin: 40px auto;
-  max-width: 900px;
+  margin: 5vh auto;
+  max-width: 90vw;
   background: #1e1e1e; /* fondo general más oscuro */
   color: #e0e0e0;
 }
@@ -25,18 +25,18 @@ h1, h2 {
 }
 
 .item {
-  border: 1px solid #444;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
+  border: 0.15vh solid #444;
+  border-radius: 1.5vh;
+  padding: 3vh;
+  margin-bottom: 3vh;
   background: #2a2a2a;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.3);
 }
 
 label {
   font-weight: 600;
   display: block;
-  margin-top: 12px;
+  margin-top: 2vh;
   color: #d0d0d0;
 }
 
@@ -44,12 +44,12 @@ input[type="text"],
 textarea,
 select {
   width: 100%;
-  padding: 8px 10px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #666;
-  border-radius: 6px;
-  font-size: 15px;
+  padding: 1.2vh 1.5vh;
+  margin-top: 1vh;
+  margin-bottom: 1.5vh;
+  border: 0.15vh solid #666;
+  border-radius: 1vh;
+  font-size: 2vh;
   background-color: #3a3a3a;
   color: #fff;
   box-sizing: border-box;
@@ -57,19 +57,19 @@ select {
 
 input[type="checkbox"] {
   transform: scale(1.2);
-  margin-right: 8px;
+  margin-right: 1vh;
 }
 
 button {
   background-color: #5cb85c;
   color: white;
   border: none;
-  padding: 10px 20px;
-  margin-top: 15px;
-  margin-right: 10px;
-  font-size: 15px;
+  padding: 1.5vh 3vh;
+  margin-top: 2vh;
+  margin-right: 2vh;
+  font-size: 2vh;
   font-weight: bold;
-  border-radius: 6px;
+  border-radius: 1vh;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -92,37 +92,35 @@ button:disabled {
 }
 
 #productos {
-  margin-top: 30px;
+  margin-top: 4vh;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
   body {
-    margin: 20px;
-    font-size: 16px;
+    margin: 3vh;
+    font-size: 2vh;
   }
 
   .item {
-    padding: 15px;
+    padding: 2vh;
   }
 
   input[type="text"],
   textarea,
   select {
-    font-size: 16px;
-    padding: 10px;
+    font-size: 2vh;
+    padding: 1.5vh;
   }
 
   label {
-    font-size: 15px;
+    font-size: 1.8vh;
   }
 
   button {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 1.5vh;
   }
-  header {
+
   
-    justify-content: center;
-  }
 }

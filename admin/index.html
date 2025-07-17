@@ -12,7 +12,7 @@
   <button onclick="guardarCambios()">💾 Guardar cambios</button>
 </header>
 <div class="item">
-  <label>Marca:</label>
+  <label>Categoria:</label>
   <select id="nueva-marca">
     <!-- se completa por JS -->
   </select>
@@ -29,7 +29,7 @@
   <label>Opciones (coma separados):</label>
   <input type="text" id="nuevas-opciones">
 
-  <label>¿Solo uno?</label>
+  <label>¿Se puede agregar un solo adicional?</label>
   <input type="checkbox" id="nuevo-solouno">
 
   <button onclick="agregarNuevo()">➕ Agregar al menú</button>
@@ -65,7 +65,7 @@
       jsonActual.imagenes.forEach((item, i) => {
         contenedor.innerHTML += `
           <div class="item">
-            <label>Tipo de comida:</label>
+            <label>Categoria:</label>
             <select onchange="editar(${i}, 'marca', this.value)">
             ${jsonmarcas.map(marcaData => `
                 <option value="${marcaData.nombre}" ${marcaData.nombre === item.marca ? 'selected' : ''}>
@@ -85,7 +85,7 @@
             <label>Opciones (separados por coma):</label>
             <input type="text" value="${(item.opciones || []).join(', ')}" onchange="editarLista(${i}, 'opciones', this.value)">
             
-            <label>¿Solo se puede agregar un adicional? (ej: salsa):</label>
+            <label>¿Se puede agregar un solo adicional?:</label>
           <input type="checkbox" ${item.solouno ? 'checked' : ''} onchange="editarValorBooleano(${i}, 'solouno', this.checked)">
           <button onclick="eliminarProducto(${i})">🗑 Eliminar</button>
 
