@@ -17,23 +17,24 @@
     <!-- se completa por JS -->
   </select>
 
-  <label>Título:</label>
-  <input type="text" id="nuevo-titulo">
+  <label>Nombre:</label>
+  <input type="text" id="nuevo-titulo" placeholder="NOMBRE DE LA COMIDA">
 
   <label>Precio:</label>
-  <input type="text" id="nuevo-precio">
+  <input type="number" value="0" id="nuevo-precio">
 
   <label>Adicionales (coma separados):</label>
-  <input type="text" id="nuevos-adicionales">
+  <input type="text" id="nuevos-adicionales" placeholder="ADICIONAL1, ADICIONAL2">
 
   <label>Precio de los adicionales:</label>
-  <input type="text" id="nuevos-precioadicionales">
+  <input type="number" value="0" id="nuevos-precioadicionales">
 
   <label>Opciones (coma separados):</label>
-  <input type="text" id="nuevas-opciones">
+  <input type="text" id="nuevas-opciones" placeholder="OPCION1, OPCION2">
 
-  <label>¿Se puede agregar un solo adicional?</label>
+  <label>¿Se puede agregar un solo adicional? (no/si)</label>
   <input type="checkbox" id="nuevo-solouno">
+<br>
 <br>
   <button onclick="agregarNuevo()">➕ Agregar al menú</button>
 </div>
