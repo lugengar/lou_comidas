@@ -126,15 +126,23 @@
       });
     }
     function agregarNuevo() {
+      precioo = "0"
+      if(document.getElementById("nuevo-precio").value != ""){
+        precioo = document.getElementById("nuevo-precio").value
+      }
+      precioo2 = "0"
+      if(document.getElementById("nuevos-precioadicionales").value != ""){
+        precioo2 = document.getElementById("nuevos-precioadicionales").value
+      }
   const nuevo = {
     marca: document.getElementById("nueva-marca").value,
     marca2: document.getElementById("nueva-marca2").value,
     titulo: document.getElementById("nuevo-titulo").value,
-    precio: document.getElementById("nuevo-precio").value,
+    precio: precioo,
     imagen: "sinfoto.svg",
     posicionimagen: "center",
     adicionales: document.getElementById("nuevos-adicionales").value.split(',').map(v => v.trim()).filter(Boolean),
-    precioadicionales: document.getElementById("nuevos-precioadicionales").value.split(',').map(v => v.trim()).filter(Boolean),
+    precioadicionales: precioo2,
     opciones: document.getElementById("nuevas-opciones").value.split(',').map(v => v.trim()).filter(Boolean),
     solouno: document.getElementById("nuevo-solouno").checked
   };
