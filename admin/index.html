@@ -12,22 +12,29 @@
   <button onclick="guardarCambios()">💾 Guardar cambios</button>
 </header>
 <div class="item">
-  <label>Categoria:</label>
+  <label>Primera categoria:</label>
   <select id="nueva-marca">
+    <option value="">SIN PRIMERA CATEGORIA</option>
+    <!-- se completa por JS -->
+  </select>
+
+  <label>Segunda categoria (opcional):</label>
+  <select id="nueva-marca2">
+    <option value="">SIN SEGUNDA CATEGORIA</option>
     <!-- se completa por JS -->
   </select>
 
   <label>Nombre:</label>
-  <input type="text" id="nuevo-titulo" placeholder="NOMBRE DE LA COMIDA">
+  <input type="text" id="nuevo-titulo" placeholder="NOMBRE DE LA COMIDA" required>
 
   <label>Precio:</label>
-  <input type="number" value="0" id="nuevo-precio">
+  <input type="number" placeholder="0" id="nuevo-precio" required>
 
   <label>Adicionales (coma separados):</label>
   <input type="text" id="nuevos-adicionales" placeholder="ADICIONAL1, ADICIONAL2">
 
   <label>Precio de los adicionales:</label>
-  <input type="number" value="0" id="nuevos-precioadicionales">
+  <input type="number" placeholder="0" id="nuevos-precioadicionales">
 
   <label>Opciones (coma separados):</label>
   <input type="text" id="nuevas-opciones" placeholder="OPCION1, OPCION2">
@@ -50,14 +57,16 @@
   fetch(`https://api.jsonbin.io/v3/b/${bindkey}`, {
       headers: { "X-Access-Key": apiKey }
     }).then(res => res.json()),
-  fetch('https://barbiniwebdesign.com.ar/lou_comidas/src/JSON/marcas.json').then(res => res.json())
+  fetch('https://loucomidas.com.ar/src/JSON/marcas.json').then(res => res.json())
 ])
 .then(([productos, marcas]) => {
 
   jsonActual = productos.record;
   jsonmarcas = marcas.imagenes;
   const select = document.getElementById("nueva-marca");
-  select.innerHTML = jsonmarcas.map(m => `<option value="${m.nombre}">${m.nombre}</option>`).join("");
+  const select2 = document.getElementById("nueva-marca2");
+  select.innerHTML += jsonmarcas.map(m => `<option value="${m.nombre}">${m.nombre}</option>`).join("");
+  select2.innerHTML += jsonmarcas.map(m => `<option value="${m.nombre}">${m.nombre}</option>`).join("");
   mostrarProductos();
 });
 
@@ -69,10 +78,21 @@
       jsonActual.imagenes.forEach((item, i) => {
         contenedor.innerHTML += `
           <div class="item">
-            <label>Categoria:</label>
+            <label>Primera categoria:</label>
             <select onchange="editar(${i}, 'marca', this.value)">
+                <option value="">SIN PRIMERA CATEGORIA</option>
+
             ${jsonmarcas.map(marcaData => `
                 <option value="${marcaData.nombre}" ${marcaData.nombre === item.marca ? 'selected' : ''}>
+                ${marcaData.nombre}
+                </option>`).join('')}
+            </select>
+          <label>Segunda Categoria (opcional):</label>
+         
+            <select onchange="editar(${i}, 'marca2', this.value)">
+                   <option value="">SIN SEGUNDA CATEGORIA</option>
+            ${jsonmarcas.map(marcaData => `
+                <option value="${marcaData.nombre}" ${marcaData.nombre === item.marca2 ? 'selected' : ''}>
                 ${marcaData.nombre}
                 </option>`).join('')}
             </select>
@@ -108,6 +128,7 @@
     function agregarNuevo() {
   const nuevo = {
     marca: document.getElementById("nueva-marca").value,
+    marca2: document.getElementById("nueva-marca2").value,
     titulo: document.getElementById("nuevo-titulo").value,
     precio: document.getElementById("nuevo-precio").value,
     imagen: "sinfoto.svg",
